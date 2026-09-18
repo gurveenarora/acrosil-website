@@ -1,0 +1,11 @@
+services:
+  # Render Static Site configuration
+  - type: web
+    name: acrosil-website
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
