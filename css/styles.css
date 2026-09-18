@@ -1543,3 +1543,40 @@ img {
 .bellow-zoom-tag:hover {
     background: var(--primary-maroon) !important;
 }
+
+
+/* ==========================================================================
+   UNIFORM IMAGE BORDER & CONTAINER DESIGN SYSTEM
+   ========================================================================== */
+
+/* Standardized Image Containers across Homepage, Bellows Specs, and all Product Pages */
+.product-img,
+.bellow-img-box,
+.about-media-box,
+.award-item-box img,
+.product-hero-img,
+.product-card .product-img,
+.bellow-card .bellow-img-box {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover border & shadow elevation uniformity */
+.product-card:hover .product-img,
+.bellow-card:hover .bellow-img-box,
+.about-media-box:hover {
+    border-color: rgba(158, 27, 50, 0.38) !important;
+    box-shadow: 0 10px 25px rgba(158, 27, 50, 0.12) !important;
+}
+
+/* Inner image border-radius and fit uniformity */
+.product-img img,
+.bellow-img-box img,
+.about-media-box img {
+    border-radius: 8px !important;
+    object-fit: contain !important;
+}
