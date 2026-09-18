@@ -1482,3 +1482,64 @@ img {
     box-shadow: 0 6px 20px rgba(158, 27, 50, 0.38) !important;
     transform: translateY(-2px);
 }
+
+
+/* ==========================================================================
+   ULTRA-PROFESSIONAL IMPRESSIVE DESIGN POLISH
+   ========================================================================== */
+
+/* Enhanced Card Animations & Glassmorphic Depths */
+.product-card, .bellow-card, .award-item-box, .stat-card {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-card:hover, .bellow-card:hover {
+    transform: translateY(-7px) !important;
+    box-shadow: 0 20px 40px rgba(158, 27, 50, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(158, 27, 50, 0.35) !important;
+}
+
+/* Section Titles Polish */
+.section-subtitle {
+    text-transform: uppercase !important;
+    letter-spacing: 1.8px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    color: var(--primary-maroon) !important;
+    background: rgba(158, 27, 50, 0.08) !important;
+    padding: 6px 16px !important;
+    border-radius: 20px !important;
+    display: inline-block !important;
+    margin-bottom: 12px !important;
+}
+
+/* Crisp Image Viewports with Subtle Hover Zoom */
+.bellow-img-box {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.bellow-img-box img {
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.06)) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bellow-card:hover .bellow-img-box img {
+    transform: scale(1.07) !important;
+}
+
+/* High-Res View Tag Styling */
+.bellow-zoom-tag {
+    background: rgba(22, 19, 29, 0.85) !important;
+    color: #ffffff !important;
+    font-size: 0.78rem !important;
+    padding: 5px 12px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+.bellow-zoom-tag:hover {
+    background: var(--primary-maroon) !important;
+}
