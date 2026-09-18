@@ -312,3 +312,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+    // 8. Live Header Product Search Bar
+    const navSearchInput = document.getElementById('nav-search-input');
+    if (navSearchInput) {
+        navSearchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.product-card');
+            
+            cards.forEach(card => {
+                const title = (card.getAttribute('data-title') || '').toLowerCase();
+                const desc = (card.getAttribute('data-desc') || '').toLowerCase();
+                const mat = (card.getAttribute('data-material') || '').toLowerCase();
+                
+                if (title.includes(query) || desc.includes(query) || mat.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            if (query.length > 0) {
+                const productsSec = document.getElementById('products');
+                if (productsSec) {
+                    productsSec.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    }
+
+    // 9. Persistent Slide-Out Quote Drawer Controls
+    window.openQuoteDrawer = function(productName) {
+        const drawer = document.getElementById('quoteDrawer');
+        if (drawer) {
+            if (productName) {
+                const targetInput = document.getElementById('drawer-product');
+                if (targetInput) targetInput.value = productName;
+            }
+            drawer.classList.add('active');
+        }
+    };
+
+    window.closeQuoteDrawer = function() {
+        const drawer = document.getElementById('quoteDrawer');
+        if (drawer) drawer.classList.remove('active');
+    };
+
+    // Attach trigger to all 'open-quote-drawer' buttons
+    document.querySelectorAll('.open-quote-drawer').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pName = btn.getAttribute('data-product') || '';
+            window.openQuoteDrawer(pName);
+        });
+    });
