@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Populate Modal Elements
                 document.getElementById('pdModalTitle').innerText = title;
-                document.getElementById('pdModalImg').src = img;
+                const imgEl = document.getElementById('pdModalImg'); if(imgEl){ imgEl.src = img || 'images/company_about.jpg'; imgEl.onerror = function(){ this.src = 'images/company_about.jpg'; }; }
                 document.getElementById('pdModalImg').alt = title;
                 document.getElementById('pdModalDesc').innerText = desc;
                 document.getElementById('pdModalMaterial').innerText = material;
