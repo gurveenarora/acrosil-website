@@ -196,41 +196,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 5. Fullscreen Image Lightbox Modal Handling
-    const imageLightboxModal = document.getElementById('imageLightboxModal');
-    const lbImg = document.getElementById('lightboxImg');
-    const lbCaption = document.getElementById('lightboxCaption');
-    const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+    
+    // 5. Universal Document-Level Click Delegation for Lightbox & Modals
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.lightbox-trigger');
+        if (trigger) {
+            e.preventDefault();
+            let imgSrc = trigger.getAttribute('data-img');
+            let caption = trigger.getAttribute('data-caption');
 
-    if (imageLightboxModal && lbImg) {
-        lightboxTriggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                let imgSrc = trigger.getAttribute('data-img');
-                let caption = trigger.getAttribute('data-caption');
-
-                if (!imgSrc) {
-                    const imgEl = trigger.querySelector('img');
-                    if (imgEl) {
-                        imgSrc = imgEl.src;
-                        caption = caption || imgEl.alt;
-                    }
+            if (!imgSrc) {
+                const imgEl = trigger.querySelector('img');
+                if (imgEl) {
+                    imgSrc = imgEl.getAttribute('src') || imgEl.src;
+                    caption = caption || imgEl.alt;
                 }
-
-                if (imgSrc) {
-                    lbImg.src = imgSrc;
-                    lbCaption.innerText = caption || '';
-                    imageLightboxModal.classList.add('active');
-                }
-            });
-        });
-
-        imageLightboxModal.addEventListener('click', (e) => {
-            if (e.target === imageLightboxModal || e.target === lbImg) {
-                imageLightboxModal.classList.remove('active');
             }
-        });
-    }
+
+            const lbModal = document.getElementById('imageLightboxModal');
+            const lbImg = document.getElementById('lightboxImg');
+            const lbCap = document.getElementById('lightboxCaption');
+
+            if (lbModal && lbImg && imgSrc) {
+                lbImg.src = imgSrc;
+                if (lbCap) lbCap.innerText = caption || '';
+                lbModal.classList.add('active');
+            }
+        }
+    });
+
 
     // 6. Universal Inquiry Form Handler (Prevents 501 Error on Local Static Test Servers & Handles Real Submissions)
     const allForms = document.querySelectorAll('form[action*="send_inquiry"], form[action*="contact"], .inquiry-form, form');
