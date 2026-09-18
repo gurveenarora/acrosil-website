@@ -361,3 +361,43 @@ document.addEventListener('DOMContentLoaded', () => {
             window.openQuoteDrawer(pName);
         });
     });
+
+
+    // 10. Clean URL Hash Suppressor (Prevents #contact / #inquiry from appearing in browser URL bar)
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href*="#"]');
+        if (anchor) {
+            const href = anchor.getAttribute('href') || '';
+            if (href.includes('#') && !href.startsWith('javascript:')) {
+                const parts = href.split('#');
+                const targetHash = parts[1];
+                
+                // If it's a quote / inquiry link, open Quote Drawer cleanly without modifying URL
+                if (targetHash === 'contact' || targetHash === 'inquiry' || targetHash === 'quote') {
+                    e.preventDefault();
+                    if (window.openQuoteDrawer) {
+                        const card = anchor.closest('.product-card, .bellow-card');
+                        const pTitle = card ? (card.getAttribute('data-title') || card.querySelector('h3')?.innerText) : '';
+                        window.openQuoteDrawer(pTitle);
+                    } else {
+                        const contactSec = document.getElementById('contact') || document.getElementById('inquiry');
+                        if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    return;
+                }
+                
+                // For other section hashes on current page, scroll smoothly without URL bar hash mutation
+                if (parts[0] === '' || parts[0] === window.location.pathname.split('/').pop()) {
+                    const targetEl = document.getElementById(targetHash);
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+    });
