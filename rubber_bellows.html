@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rubber Bellows | Acrosil Products Pvt. Ltd.</title>
-    <meta name="description" content="Flexible expansion bellows designed to absorb vibration, thermal movement, and piping misalignments. Includes Anti-Static Bellows, Conical Bellows, Fabric Reinforced Rubber Bellows, Flexible Rubber Bellows, Nylon Mesh Bellows, PVC Bellows, Silicone Sucker Bellows, Silicone Weighing Bellows, and Straight Bellows.">
-    <meta name="keywords" content="Rubber Bellows, Acrosil, Pharmaceutical Rubber, Silicone, PTFE">
+    <title>Flexible Bellows Range | Acrosil Products Pvt. Ltd.</title>
+    <meta name="description" content="Explore Acrosil's full range of industrial and hygienic flexible bellows including Silicone Rubber, Nylon Mesh, PVC, PTFE, Anti-Static, Weighing, Conical, and Fabric Reinforced Bellows.">
+    <meta name="keywords" content="Rubber Bellows, Silicone Bellow, Nylon Mesh Bellow, PVC Bellow, PTFE Bellow, Acrosil Products, Flexible Expansion Joints">
     <meta name="author" content="Acrosil Products Pvt. Ltd.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="product">
-    <meta property="og:title" content="Rubber Bellows | Acrosil Products Pvt. Ltd.">
-    <meta property="og:description" content="Flexible expansion bellows designed to absorb vibration, thermal movement, and piping misalignments. Includes Anti-Static Bellows, Conical Bellows, Fabric Reinforced Rubber Bellows, Flexible Rubber Bellows, Nylon Mesh Bellows, PVC Bellows, Silicone Sucker Bellows, Silicone Weighing Bellows, and Straight Bellows.">
+    <meta property="og:title" content="Flexible Bellows Range | Acrosil Products Pvt. Ltd.">
+    <meta property="og:description" content="Engineered flexible bellows for vibration isolation, thermal expansion, and hygienic sealing across pharma, chemical, food, and machinery sectors.">
     <meta property="og:image" content="https://www.acrosil.com/images/showcase/card_bellows.jpg">
 
     <!-- Google Fonts & FontAwesome -->
@@ -26,43 +26,90 @@
         .product-hero {
             background: var(--brand-gradient);
             color: #fff;
-            padding: 50px 0 35px;
+            padding: 55px 0 40px;
         }
         .breadcrumb {
             display: flex;
             gap: 8px;
             font-size: 0.88rem;
             color: var(--accent-yellow);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .breadcrumb a {
             color: #fff;
             text-decoration: none;
         }
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .spec-table th, .spec-table td {
-            padding: 12px 16px;
+        .bellow-card {
+            background: #ffffff;
+            border-radius: 12px;
             border: 1px solid #e2e8f0;
-            text-align: left;
+            padding: 24px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .spec-table th {
-            background-color: var(--primary-maroon);
-            color: #fff;
+        .bellow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: rgba(158, 27, 50, 0.3);
         }
-        .spec-table tr:nth-child(even) {
-            background-color: #f8fafc;
+        .bellow-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
         }
-        .size-box {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-top: 20px;
-            border-left: 4px solid var(--primary-maroon);
+        .bellow-icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: rgba(158, 27, 50, 0.08);
+            color: var(--primary-maroon);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .bellow-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+        }
+        .bellow-card-desc {
+            color: #64748b;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .bellow-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+            font-size: 0.88rem;
+            color: #334155;
+        }
+        .bellow-feature-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bellow-feature-list li i {
+            color: var(--primary-maroon);
+            font-size: 0.75rem;
+        }
+        .bellow-app-tag {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -95,8 +142,8 @@
                     <a href="index.html#contact" class="nav-link">Contact Us</a>
                 </nav>
                 <div style="display: flex; gap: 12px; align-items: center;">
-                    <a href="Acrosil_Product_Catalogue.pdf" target="_blank" class="btn-catalogue-pdf"><i class="fa-solid fa-file-pdf" style="color: #FFC107;"></i> View Catalogue</a>
-                    <a href="#inquiry" class="btn btn-primary">Get Quick Quote</a>
+                    <a href="Acrosil_Product_Catalogue.pdf" target="_blank" download class="btn-catalogue-pdf"><i class="fa-solid fa-file-pdf" style="color: #FFC107;"></i> Download Catalogue</a>
+                    <a href="#inquiry" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
         </div>
@@ -106,81 +153,230 @@
     <section class="product-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html">Home</a> &gt; <a href="index.html#products">Products</a> &gt; <span>Rubber Bellows</span>
+                <a href="index.html">Home</a> &gt; <a href="index.html#products">Products</a> &gt; <span>Flexible Bellows</span>
             </div>
-            <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 10px;">Rubber Bellows</h1>
-            <p style="font-size: 1.05rem; max-width: 800px; color: #f1f5f9;">Flexible expansion bellows designed to absorb vibration, thermal movement, and piping misalignments. Includes Anti-Static Bellows, Conical Bellows, Fabric Reinforced Rubber Bellows, Flexible Rubber Bellows, Nylon Mesh Bellows, PVC Bellows, Silicone Sucker Bellows, Silicone Weighing Bellows, and Straight Bellows.</p>
+            <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">Industrial & Hygienic Flexible Bellows</h1>
+            <p style="font-size: 1.05rem; max-width: 820px; color: #f1f5f9; line-height: 1.6;">
+                Engineered for maximum flexibility, movement compensation, vibration isolation, and dust-tight sealing. Explore our comprehensive range of high-purity Silicone, PTFE, PVC, Nylon Mesh, and Synthetic Rubber bellows tailored for pharmaceutical, food, chemical, and industrial machinery.
+            </p>
         </div>
     </section>
 
-    <!-- Main Content Section -->
+    <!-- Executive Overview & Bellows Family Grid -->
     <section class="section-padding" style="background: #f8fafc;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            
+            <div class="section-title text-center" style="margin-bottom: 40px;">
+                <span class="section-subtitle">Complete Bellows Catalog</span>
+                <h2>Our Flexible Bellows Product Range</h2>
+                <p style="color: var(--text-muted); max-width: 760px; margin: 10px auto 0;">All Acrosil bellows are custom manufactured in a wide selection of diameters, lengths, wall profiles, and material grades to meet specific operating conditions and equipment specifications.</p>
+            </div>
+
+            <!-- Grid of All Bellow Types (Combined from Both Official Catalogues) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
                 
-                <div>
-                    <div style="background: #fff; padding: 12px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-                        <img src="images/showcase/card_bellows.jpg" alt="Rubber Bellows" style="max-width: 100%; border-radius: 8px; max-height: 380px; object-fit: contain;">
+                <!-- 1. Silicone Rubber Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-shield-cat"></i></div>
+                            <h3 class="bellow-card-title">Silicone Rubber Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">High-purity food grade silicone expansion bellows engineered for extreme flexibility, leak-proof performance, and long service life in sterile environments.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Food grade & medical purity options</li>
+                            <li><i class="fa-solid fa-check"></i> Wide temp resistance (-60°C to +250°C)</li>
+                            <li><i class="fa-solid fa-check"></i> Autoclavable & easy to clean</li>
+                        </ul>
                     </div>
-                    <div class="size-box">
-                        <h3 style="color: var(--primary-maroon); margin-bottom: 8px; font-size: 1.1rem;"><i class="fa-solid fa-ruler-combined"></i> Sizes & Dimensions Specifications</h3>
-                        <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">Standard Range: ID 10mm Up To ID 2500mm & Length as per requirement. (Nylon Mesh / PVC: ID 50mm - 2500mm | Sucker: ID 5mm - 25mm | Weighing: ID 50mm - 1500mm | Straight & PTFE: ID 10mm - 500mm)</p>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-industry"></i> Pharma & Food Processing</span>
                     </div>
                 </div>
 
-                <div>
-                    <span class="section-subtitle">Technical Details & Features</span>
-                    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Product Overview</h2>
-                    <p style="color: #475569; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">Flexible expansion bellows designed to absorb vibration, thermal movement, and piping misalignments. Includes Anti-Static Bellows, Conical Bellows, Fabric Reinforced Rubber Bellows, Flexible Rubber Bellows, Nylon Mesh Bellows, PVC Bellows, Silicone Sucker Bellows, Silicone Weighing Bellows, and Straight Bellows.</p>
+                <!-- 2. Nylon Mesh Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-filter"></i></div>
+                            <h3 class="bellow-card-title">Nylon Mesh Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Lightweight flexible bellows constructed with fine woven nylon mesh and reinforced fabric edges designed for sifting and screening machinery.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Fine woven nylon mesh construction</li>
+                            <li><i class="fa-solid fa-check"></i> Reinforced top & bottom fabric borders</li>
+                            <li><i class="fa-solid fa-check"></i> Excellent air flow & filtration flexibility</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-mortar-pestle"></i> Vibro Sifters & Multi Mills</span>
+                    </div>
+                </div>
 
-                    <table class="spec-table">
-                        <tr>
-                            <th>Specification</th>
-                            <th>Details</th>
-                        </tr>
-                        <tr>
-                            <td><strong>Material Grades</strong></td>
-                            <td>Anti-Static Rubber, Silicone, PTFE, EPDM, FKM Viton, Neoprene & NBR Rubber</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Size Range</strong></td>
-                            <td>Standard Range: ID 10mm Up To ID 2500mm & Length as per requirement. (Nylon Mesh / PVC: ID 50mm - 2500mm | Sucker: ID 5mm - 25mm | Weighing: ID 50mm - 1500mm | Straight & PTFE: ID 10mm - 500mm)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Temperature / Pressure</strong></td>
-                            <td>-40°C to +200°C</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Key Applications</strong></td>
-                            <td>Pharma ducting, HVAC piping, pump suction/discharge lines, weighing scale isolators</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Manufacturing Standard</strong></td>
-                            <td>High Quality Precision Polymer Engineering</td>
-                        </tr>
-                    </table>
+                <!-- 3. PVC Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-cubes"></i></div>
+                            <h3 class="bellow-card-title">PVC Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Durable and lightweight flexible PVC bellows designed for smooth movement protection of machine parts, dust handling, and fluid transfer.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> High flexibility & easy maintenance</li>
+                            <li><i class="fa-solid fa-check"></i> Dust-proof & fluid splash protection</li>
+                            <li><i class="fa-solid fa-check"></i> Resistant to mild industrial chemicals</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-gears"></i> Moving Machine Components</span>
+                    </div>
+                </div>
 
-                    <div style="display: flex; gap: 15px; margin-top: 25px;">
-                        <a href="#inquiry" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Price Quote</a>
-                        <a href="tel:+919967605608" class="btn btn-secondary" style="border: 2px solid var(--primary-maroon); color: var(--primary-maroon);"><i class="fa-solid fa-phone"></i> Call +91 9967605608</a>
+                <!-- 4. PTFE Teflon Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-flask-vial"></i></div>
+                            <h3 class="bellow-card-title">PTFE Teflon Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Precision-machined 100% virgin PTFE Teflon bellows offering supreme chemical inertness for handling highly corrosive acids, alkalis, and solvents.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Complete chemical & solvent resistance</li>
+                            <li><i class="fa-solid fa-check"></i> Extreme temp range (-200°C to +260°C)</li>
+                            <li><i class="fa-solid fa-check"></i> Non-toxic, non-reactive & low friction</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-vial-virus"></i> Corrosive Chemical Lines</span>
+                    </div>
+                </div>
+
+                <!-- 5. Anti-Static Corrugated Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                            <h3 class="bellow-card-title">Anti-Static Corrugated Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Specially formulated conductive rubber bellows designed to dissipate static electricity build-up during dry powder conveying and bulk transfer.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Prevents static charge accumulation</li>
+                            <li><i class="fa-solid fa-check"></i> Deep corrugated profile for high movement</li>
+                            <li><i class="fa-solid fa-check"></i> Safe for powder discharge systems</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-triangle-exclamation"></i> Powder Transfer & Conveying</span>
+                    </div>
+                </div>
+
+                <!-- 6. Silicone Weighing & Sucker Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-weight-scale"></i></div>
+                            <h3 class="bellow-card-title">Silicone Weighing & Sucker Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Ultra-flexible thin-wall silicone bellows providing zero-tare resistance for precise load-cell weighing, plus molded silicone suction bellows for picking systems.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Low resistance wall for accurate weighing</li>
+                            <li><i class="fa-solid fa-check"></i> Transparent & food-grade options</li>
+                            <li><i class="fa-solid fa-check"></i> Specialized sucker shapes for vacuum cups</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-scale-balanced"></i> Dosing & Weighing Isolators</span>
+                    </div>
+                </div>
+
+                <!-- 7. Conical & Straight Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+                            <h3 class="bellow-card-title">Conical & Straight Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Tapered conical and straight cylindrical flexible expansion joints designed to connect different pipe sizes while absorbing axial expansion and offset misalignment.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Tapered or straight sleeve geometries</li>
+                            <li><i class="fa-solid fa-check"></i> Smooth internal bore for uninhibited flow</li>
+                            <li><i class="fa-solid fa-check"></i> Available in Silicone, EPDM, Nitrile & Neoprene</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-diagram-project"></i> HVAC & Piping Connections</span>
+                    </div>
+                </div>
+
+                <!-- 8. Fabric & Fabric Reinforced Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                            <h3 class="bellow-card-title">Fabric Reinforced Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Heavy-duty elastomer bellows embedded with high-tensile fabric insertion layers for enhanced pressure rating and superior mechanical tear resistance.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Reinforced internal fabric matrix</li>
+                            <li><i class="fa-solid fa-check"></i> High pressure & vacuum collapse stability</li>
+                            <li><i class="fa-solid fa-check"></i> Dampens heavy motor vibration shocks</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-compress"></i> High Duty Pump Lines</span>
+                    </div>
+                </div>
+
+                <!-- 9. Bin Activator & Custom Molded Bellows -->
+                <div class="bellow-card">
+                    <div>
+                        <div class="bellow-card-header">
+                            <div class="bellow-icon-box"><i class="fa-solid fa-hand-holding-hand"></i></div>
+                            <h3 class="bellow-card-title">Bin Activator Bellows</h3>
+                        </div>
+                        <p class="bellow-card-desc">Robust heavy-section flexible bellows engineered specifically to seal vibratory bin activators and hopper outlets in bulk solid handling operations.</p>
+                        <ul class="bellow-feature-list">
+                            <li><i class="fa-solid fa-check"></i> Heavy-duty vibration absorption</li>
+                            <li><i class="fa-solid fa-check"></i> Tight flange seal geometry</li>
+                            <li><i class="fa-solid fa-check"></i> Long fatigue life under continuous vibration</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="bellow-app-tag"><i class="fa-solid fa-wheat-awn"></i> Silos & Hopper Discharges</span>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Custom Tooling & Prototyping Highlight Banner -->
+            <div style="background: var(--brand-card-gradient); color: #fff; padding: 35px; border-radius: 14px; margin-top: 45px; box-shadow: 0 10px 30px rgba(22, 19, 29, 0.3); display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+                <div style="max-width: 680px;">
+                    <h3 style="color: #FFC107; font-size: 1.4rem; margin-bottom: 8px;"><i class="fa-solid fa-drafting-compass"></i> Custom Manufactured Bellows As Per Drawing</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.95; margin: 0;">
+                        Do you require a non-standard bellow diameter, custom flange collar, or specific elastomer compound? We engineer custom molded and hand-built bellows tailored strictly to your technical drawings or physical samples.
+                    </p>
+                </div>
+                <div>
+                    <a href="#inquiry" class="btn btn-primary" style="background: #FFC107; color: #16131D; border: none; font-weight: 700; padding: 12px 26px; border-radius: 30px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+                        Request Custom Bellow Quote <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Quick Inquiry Form -->
-    <section id="inquiry" class="section-padding" style="background: #fff;">
+    <!-- Quick Inquiry Form Section -->
+    <section id="inquiry" class="section-padding" style="background: #ffffff; border-top: 1px solid var(--border-color);">
         <div class="container" style="max-width: 800px;">
             <div class="section-title text-center">
                 <span class="section-subtitle">Direct Manufacturer Inquiry</span>
-                <h2>Inquire About Rubber Bellows</h2>
-                <p style="color: var(--text-muted);">Fill out your requirements below and our technical sales team will respond promptly.</p>
+                <h2>Inquire About Flexible Bellows</h2>
+                <p style="color: var(--text-muted);">Specify your required material, dimensions, or application details below for a fast technical response.</p>
             </div>
             
-            <form action="send_inquiry.php" method="POST" style="background: #f8fafc; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-                <input type="hidden" name="product_name" value="Rubber Bellows">
+            <form action="send_inquiry.php" method="POST" style="background: #f8fafc; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;">
+                <input type="hidden" name="product_name" value="Industrial & Hygienic Flexible Bellows">
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                     <div>
@@ -189,7 +385,7 @@
                     </div>
                     <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 6px;">Company Name *</label>
-                        <input type="text" name="company" required placeholder="Pharma Corp Pvt Ltd" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                        <input type="text" name="company" required placeholder="Pharma / Engineering Company" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px;">
                     </div>
                 </div>
 
@@ -205,11 +401,11 @@
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <label style="display: block; font-weight: 600; margin-bottom: 6px;">Size & Requirements *</label>
-                    <textarea name="message" rows="4" required placeholder="Specify required inner diameter (ID), outer diameter (OD), length, quantity, or custom specs..." style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px;"></textarea>
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px;">Bellow Type & Requirements *</label>
+                    <textarea name="message" rows="4" required placeholder="Specify required bellow type (Silicone, Nylon Mesh, PVC, PTFE, etc.), dimensions (ID, OD, length), or application specs..." style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px;"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 12px;"><i class="fa-solid fa-paper-plane"></i> Submit Inquiry</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 12px; border-radius: 8px;"><i class="fa-solid fa-paper-plane"></i> Submit Bellows Inquiry</button>
             </form>
         </div>
     </section>
@@ -227,8 +423,8 @@
                 <ul class="footer-links">
                     <li><a href="index.html#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
                     <li><a href="index.html#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-                    <li><a href="index.html#products"><i class="fa-solid fa-angle-right"></i> All 17 Products Catalog</a></li>
-                    <li><a href="Acrosil_Product_Catalogue.pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color: var(--accent-yellow);"></i> Download Official PDF Catalogue</a></li>
+                    <li><a href="index.html#products"><i class="fa-solid fa-angle-right"></i> All Products Catalog</a></li>
+                    <li><a href="Acrosil_Product_Catalogue.pdf" target="_blank" download><i class="fa-solid fa-file-pdf" style="color: var(--accent-yellow);"></i> Download PDF Catalogue</a></li>
                 </ul>
             </div>
             <div>
