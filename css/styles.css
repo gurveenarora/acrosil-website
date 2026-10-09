@@ -2641,7 +2641,7 @@ footer.footer, .footer {
 }
 
 .footer p, .footer-col p, .footer-desc-text {
-    color: #CBD5E1 !important;
+    color: #ffffff !important;
     font-size: 0.95rem !important;
     line-height: 1.6 !important;
 }
@@ -2654,7 +2654,7 @@ footer.footer, .footer {
 }
 
 .footer-links li a, .footer-links a {
-    color: #CBD5E1 !important;
+    color: #ffffff !important;
     font-size: 0.92rem !important;
     transition: all 0.2s ease !important;
 }
@@ -2665,7 +2665,7 @@ footer.footer, .footer {
 }
 
 .footer-contact-link {
-    color: #CBD5E1 !important;
+    color: #ffffff !important;
     font-size: 0.92rem !important;
 }
 
