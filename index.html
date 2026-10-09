@@ -22,7 +22,7 @@
 </head>
 <body>
 
-                                <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
+                                        <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
     <header class="header-sticky">
         <!-- 1. Top Bar -->
         <div class="topbar">
@@ -112,7 +112,7 @@
 </head>
 <body>
 
-                                <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
+                                        <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
     <header class="header-sticky">
         <!-- 1. Top Bar -->
         <div class="topbar">
@@ -197,42 +197,44 @@
             </div>
 
             <!-- Quick Inquiry Hero Form Card -->
-            <div class="hero-card">
-                <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: #ffffff;">Request a Quote (RFQ)</h3>
+            <div class="hero-card" style="background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); border-radius: 16px; padding: 28px;">
+                <h3 style="font-size: 1.35rem; margin-bottom: 16px; color: #ffffff; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+                    <i class="fa-solid fa-paper-plane" style="color: #FFC107;"></i> Request a Quote (RFQ)
+                </h3>
                 <form id="heroRfqForm" action="send_inquiry.php" method="POST" enctype="multipart/form-data" class="rfq-form-component">
     <!-- Spam Honeypot -->
     <input type="text" name="b_hp_field" style="display:none !important;" tabindex="-1" autocomplete="off">
     
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Company Name *</label>
-            <input type="text" name="company" required class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="Company Name">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Company Name <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="company" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Company Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Country *</label>
-            <input type="text" name="country" required class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="Country">
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Contact Person *</label>
-            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="Your Name">
-        </div>
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Business Email *</label>
-            <input type="email" name="email" required class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="name@company.com">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Country <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="country" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Country">
         </div>
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Phone / WhatsApp</label>
-            <input type="tel" name="phone" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="+91 9892767126">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Contact Person <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Your Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Product Required *</label>
-            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.82rem; padding: 8px 10px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Business Email <span style="color: #FFC107;">*</span></label>
+            <input type="email" name="email" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="name@company.com">
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Phone / WhatsApp</label>
+            <input type="tel" name="phone" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="+91 9892767126">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Product Required <span style="color: #FFC107;">*</span></label>
+            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
                 <option value="">Select Product...</option>
                 <option value="Rubber Bellows">Rubber Bellows</option>
                 <option value="Rubber Sheets">Rubber & Silicone Sheets</option>
@@ -258,26 +260,26 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Material</label>
-            <input type="text" name="material" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="e.g. Silicone / Viton / PTFE">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Material</label>
+            <input type="text" name="material" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Silicone / Viton / PTFE">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Quantity</label>
-            <input type="text" name="quantity" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="e.g. 500 pcs">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Quantity</label>
+            <input type="text" name="quantity" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. 500 pcs">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Delivery Date</label>
-            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Delivery Date</label>
+            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
         </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Application</label>
-        <input type="text" name="application" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="e.g. Engineering equipment / Fluid transfer">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Application</label>
+        <input type="text" name="application" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-        <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+    <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.85; font-size: 0.78rem; color: #ffffff;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
         <div class="custom-file-wrapper">
             <input type="file" name="drawing_file" id="heroRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
             <label for="heroRfqForm_drawing_file" class="btn-file-upload">
@@ -286,12 +288,12 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-bottom: 14px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Additional Requirement</label>
-        <textarea name="message" rows="2" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
+    <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Additional Requirement</label>
+        <textarea name="message" rows="2" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-submit-inquiry w-100" style="width:100%; padding: 11px; background: var(--primary-maroon); color: #ffffff; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+    <button type="submit" class="btn btn-submit-inquiry w-100" style="width: 100%; padding: 12px; font-weight: 800; font-size: 0.98rem; border: none; border-radius: 8px; cursor: pointer; transition: all 0.25s ease; background: linear-gradient(135deg, #FFC107 0%, #F5A623 100%); color: #0F172A; box-shadow: 0 4px 18px rgba(255, 193, 7, 0.35);">Submit Request <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i></button>
     <div class="form-status-msg" style="font-size: 0.85rem; margin-top: 10px; display: none; text-align: center;"></div>
 </form>
             </div>
@@ -373,6 +375,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -849,6 +853,8 @@
 
     
 
+    
+
 
 <!-- 8. Contact Us Section -->
     
@@ -871,6 +877,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -920,6 +928,8 @@
 
     
 
+    
+
         <!-- 7. Quality Section -->
     <section id="quality-intro" class="section-padding" style="background: var(--bg-light); border-bottom: 1px solid var(--border-color);">
         <div class="container">
@@ -949,6 +959,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -1012,6 +1024,8 @@
 
     
 
+    
+
     <!-- 8. Global Reach, Export Markets & FAQ Section -->
         <!-- Frequently Asked Questions Section -->
     <section id="faq" class="section-padding" style="background: #ffffff; border-top: 1px solid var(--border-color);">
@@ -1069,6 +1083,8 @@
 
     
 
+    
+
 <section id="contact" class="section-padding" style="background: var(--bg-light);">
         <div class="container contact-grid">
             <div>
@@ -1103,42 +1119,44 @@
             </div>
 
             <!-- Full Contact Inquiry RFQ Form -->
-            <div style="background: #ffffff; border-radius: 12px; padding: 30px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                <h3 style="font-size: 1.3rem; margin-bottom: 16px;">Request a Quote (RFQ)</h3>
+            <div style="background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #E2E8F0; box-shadow: 0 10px 35px rgba(0,0,0,0.06);">
+                <h3 style="font-size: 1.35rem; margin-bottom: 18px; color: #1E293B; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+                    <i class="fa-solid fa-paper-plane" style="color: var(--primary-maroon);"></i> Request a Quote (RFQ)
+                </h3>
                 <form id="contactRfqForm" action="send_inquiry.php" method="POST" enctype="multipart/form-data" class="rfq-form-component">
     <!-- Spam Honeypot -->
     <input type="text" name="b_hp_field" style="display:none !important;" tabindex="-1" autocomplete="off">
     
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Company Name *</label>
-            <input type="text" name="company" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Company Name">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Company Name <span style="color: #9E1B32;">*</span></label>
+            <input type="text" name="company" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Company Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Country *</label>
-            <input type="text" name="country" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Country">
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Contact Person *</label>
-            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Your Name">
-        </div>
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Business Email *</label>
-            <input type="email" name="email" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="name@company.com">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Country <span style="color: #9E1B32;">*</span></label>
+            <input type="text" name="country" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Country">
         </div>
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Phone / WhatsApp</label>
-            <input type="tel" name="phone" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="+91 9892767126">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Contact Person <span style="color: #9E1B32;">*</span></label>
+            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Your Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Product Required *</label>
-            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.88rem; padding: 10px 14px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Business Email <span style="color: #9E1B32;">*</span></label>
+            <input type="email" name="email" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="name@company.com">
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Phone / WhatsApp</label>
+            <input type="tel" name="phone" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="+91 9892767126">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Product Required <span style="color: #9E1B32;">*</span></label>
+            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
                 <option value="">Select Product...</option>
                 <option value="Rubber Bellows">Rubber Bellows</option>
                 <option value="Rubber Sheets">Rubber & Silicone Sheets</option>
@@ -1164,26 +1182,26 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Material</label>
-            <input type="text" name="material" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Silicone / Viton / PTFE">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Material</label>
+            <input type="text" name="material" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Silicone / Viton / PTFE">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Quantity</label>
-            <input type="text" name="quantity" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. 500 pcs">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Quantity</label>
+            <input type="text" name="quantity" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. 500 pcs">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Delivery Date</label>
-            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Delivery Date</label>
+            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
         </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Application</label>
-        <input type="text" name="application" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Engineering equipment / Fluid transfer">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Application</label>
+        <input type="text" name="application" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-        <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+    <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.85; font-size: 0.78rem; color: #1e293b;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
         <div class="custom-file-wrapper">
             <input type="file" name="drawing_file" id="contactRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
             <label for="contactRfqForm_drawing_file" class="btn-file-upload">
@@ -1192,12 +1210,12 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-bottom: 14px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Additional Requirement</label>
-        <textarea name="message" rows="2" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
+    <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #1e293b;">Additional Requirement</label>
+        <textarea name="message" rows="2" class="form-control" style="font-size: 0.88rem; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-submit-inquiry w-100" style="width:100%; padding: 11px; background: var(--primary-maroon); color: #ffffff; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+    <button type="submit" class="btn btn-submit-inquiry w-100" style="width: 100%; padding: 12px; font-weight: 800; font-size: 0.98rem; border: none; border-radius: 8px; cursor: pointer; transition: all 0.25s ease; background: linear-gradient(135deg, #9E1B32 0%, #7D1728 100%); color: #FFFFFF; box-shadow: 0 4px 18px rgba(158, 27, 50, 0.35);">Submit Request <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i></button>
     <div class="form-status-msg" style="font-size: 0.85rem; margin-top: 10px; display: none; text-align: center;"></div>
 </form>
             </div>
@@ -1208,7 +1226,9 @@
 
 
 
-                        <!-- 9. Footer -->
+
+
+                            <!-- 9. Footer -->
     <footer class="footer" style="background: #1e293b; color: #ffffff; padding: 50px 0 25px 0;">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -1304,49 +1324,49 @@
     <!-- Main JavaScript -->
     <script src="js/main.js?v=2.1"></script>
 
-                        <!-- Slide-Out Persistent Quote Drawer -->
+                            <!-- Slide-Out Persistent Quote Drawer -->
     <div id="quoteDrawer" class="drawer-overlay" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" onclick="if(event.target === this) closeQuoteDrawer()">
-        <div class="slide-drawer">
-            <div class="drawer-header">
-                <h3 id="drawerTitle"><i class="fa-solid fa-paper-plane" style="color: var(--accent-yellow); margin-right: 8px;"></i> Request a Quote (RFQ)</h3>
-                <button type="button" class="drawer-close" onclick="closeQuoteDrawer()" aria-label="Close Drawer">&times;</button>
+        <div class="slide-drawer" style="background: #0F172A; color: #ffffff;">
+            <div class="drawer-header" style="border-bottom: 1px solid rgba(255,255,255,0.15);">
+                <h3 id="drawerTitle" style="color: #ffffff; display: flex; align-items: center; gap: 10px; font-size: 1.25rem;"><i class="fa-solid fa-paper-plane" style="color: #FFC107;"></i> Request a Quote (RFQ)</h3>
+                <button type="button" class="drawer-close" onclick="closeQuoteDrawer()" aria-label="Close Drawer" style="color: #ffffff;">&times;</button>
             </div>
             <div class="drawer-body">
-                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">Submit your requirement details and our sales engineering team will assist you.</p>
+                <p style="font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px;">Submit your requirement details and our sales engineering team will assist you.</p>
                 <form id="drawerRfqForm" action="send_inquiry.php" method="POST" enctype="multipart/form-data" class="rfq-form-component">
     <!-- Spam Honeypot -->
     <input type="text" name="b_hp_field" style="display:none !important;" tabindex="-1" autocomplete="off">
     
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Company Name *</label>
-            <input type="text" name="company" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Company Name">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Company Name <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="company" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Company Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Country *</label>
-            <input type="text" name="country" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Country">
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Contact Person *</label>
-            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Your Name">
-        </div>
-        <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Business Email *</label>
-            <input type="email" name="email" required class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="name@company.com">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Country <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="country" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Country">
         </div>
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Phone / WhatsApp</label>
-            <input type="tel" name="phone" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="+91 9892767126">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Contact Person <span style="color: #FFC107;">*</span></label>
+            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Your Name">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Product Required *</label>
-            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.88rem; padding: 10px 14px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Business Email <span style="color: #FFC107;">*</span></label>
+            <input type="email" name="email" required class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="name@company.com">
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Phone / WhatsApp</label>
+            <input type="tel" name="phone" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="+91 9892767126">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Product Required <span style="color: #FFC107;">*</span></label>
+            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
                 <option value="">Select Product...</option>
                 <option value="Rubber Bellows">Rubber Bellows</option>
                 <option value="Rubber Sheets">Rubber & Silicone Sheets</option>
@@ -1372,26 +1392,26 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px;">
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Material</label>
-            <input type="text" name="material" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Silicone / Viton / PTFE">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Material</label>
+            <input type="text" name="material" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Silicone / Viton / PTFE">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Quantity</label>
-            <input type="text" name="quantity" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. 500 pcs">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Quantity</label>
+            <input type="text" name="quantity" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. 500 pcs">
         </div>
         <div class="form-group" style="margin-bottom: 0;">
-            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Delivery Date</label>
-            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;">
+            <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Delivery Date</label>
+            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
         </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Application</label>
-        <input type="text" name="application" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Engineering equipment / Fluid transfer">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Application</label>
+        <input type="text" name="application" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-        <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+    <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.85; font-size: 0.78rem; color: #ffffff;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
         <div class="custom-file-wrapper">
             <input type="file" name="drawing_file" id="drawerRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
             <label for="drawerRfqForm_drawing_file" class="btn-file-upload">
@@ -1400,12 +1420,12 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-bottom: 14px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Additional Requirement</label>
-        <textarea name="message" rows="2" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
+    <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px; color: #ffffff;">Additional Requirement</label>
+        <textarea name="message" rows="2" class="form-control" style="font-size: 0.85rem; padding: 9px 12px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-submit-inquiry w-100" style="width:100%; padding: 11px; background: var(--primary-maroon); color: #ffffff; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+    <button type="submit" class="btn btn-submit-inquiry w-100" style="width: 100%; padding: 12px; font-weight: 800; font-size: 0.98rem; border: none; border-radius: 8px; cursor: pointer; transition: all 0.25s ease; background: linear-gradient(135deg, #FFC107 0%, #F5A623 100%); color: #0F172A; box-shadow: 0 4px 18px rgba(255, 193, 7, 0.35);">Submit Request <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i></button>
     <div class="form-status-msg" style="font-size: 0.85rem; margin-top: 10px; display: none; text-align: center;"></div>
 </form>
             </div>
