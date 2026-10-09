@@ -9,23 +9,23 @@
 */
 
 :root {
-    --primary-maroon: #0F172A;
-    --primary-brand: #0F172A;
-    --primary-dark: #0B192C;
-    --primary-hover: #1E293B;
-    --accent-gold: #F59E0B;
-    --accent-yellow: #FBBF24;
-    --text-dark: #0F172A;
-    --text-body: #334155;
-    --text-muted: #64748B;
-    --bg-light: #F8F9FA;
-    --bg-white: #FFFFFF;
-    --border-color: #E2E8F0;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --font-heading: 'Outfit', 'Segoe UI', sans-serif;
-    --font-body: 'Inter', 'Segoe UI', sans-serif;
+    --primary-maroon: #7c1730;
+    --primary-brand: #7c1730;
+    --primary-dark: #5c1123;
+    --primary-hover: #961c3b;
+    --accent-gold: #D97706;
+    --accent-yellow: #F59E0B;
+    --text-dark: #222222;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --bg-light: #f5f6f8;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --transition: all 0.25s ease;
+    --font-heading: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -1401,9 +1401,23 @@ img {
    ========================================================================== */
 
 :root {
-    --brand-gradient: linear-gradient(135deg, #16131D 0%, #361722 30%, #682633 70%, #9E1B32 100%);
-    --brand-gradient-hover: linear-gradient(135deg, #231B2B 0%, #4D1E2C 30%, #7D2D3E 70%, #B31E39 100%);
-    --brand-card-gradient: linear-gradient(145deg, #1C1725 0%, #4D1A25 50%, #733236 100%);
+    --primary-maroon: #7c1730;
+    --primary-brand: #7c1730;
+    --primary-dark: #5c1123;
+    --primary-hover: #961c3b;
+    --accent-gold: #D97706;
+    --accent-yellow: #F59E0B;
+    --text-dark: #222222;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --bg-light: #f5f6f8;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --transition: all 0.25s ease;
+    --font-heading: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* 1. Hero Section Gradient & Wave Divider */
@@ -2531,4 +2545,85 @@ p {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+
+/* === CLEAN SINGLE-COLUMN LAYOUT & BRAND SYSTEM === */
+
+.container {
+    max-width: 1140px !important;
+}
+
+body, p {
+    color: #222222 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #7c1730;
+}
+
+.section-title h2 {
+    color: #7c1730 !important;
+}
+
+.btn-primary, .btn-hero-primary, .btn-submit-inquiry {
+    background-color: #7c1730 !important;
+    color: #ffffff !important;
+    border: 2px solid #7c1730 !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+}
+
+.btn-primary:hover, .btn-hero-primary:hover, .btn-submit-inquiry:hover {
+    background-color: #5c1123 !important;
+    border-color: #5c1123 !important;
+    color: #ffffff !important;
+}
+
+.btn-secondary, .btn-hero-secondary, .btn-outline {
+    background-color: transparent !important;
+    color: #7c1730 !important;
+    border: 2px solid #7c1730 !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+}
+
+.btn-secondary:hover, .btn-hero-secondary:hover, .btn-outline:hover {
+    background-color: #7c1730 !important;
+    color: #ffffff !important;
+}
+
+.tab-btn.active {
+    background: #7c1730 !important;
+    color: #ffffff !important;
+    border-color: #7c1730 !important;
+}
+
+.feature-card-modern, .product-card {
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+.feature-card-modern:hover, .product-card:hover {
+    border-color: #7c1730 !important;
+}
+
+.feature-icon-box {
+    background: rgba(124, 23, 48, 0.08) !important;
+    color: #7c1730 !important;
+    border-radius: 8px !important;
+}
+
+.feature-card-modern:hover .feature-icon-box {
+    background: #7c1730 !important;
+    color: #ffffff !important;
+}
+
+/* Accordion Styling */
+details summary::-webkit-details-marker { display: none; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; }
+
+/* Image Lazy Loading Indicator */
+img[loading="lazy"] {
+    transition: opacity 0.3s ease;
 }

@@ -604,3 +604,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // FAQ Single Open Accordion Behavior
+    const faqDetails = document.querySelectorAll('.faq-accordion details');
+    faqDetails.forEach(targetDetail => {
+        targetDetail.addEventListener('toggle', () => {
+            if (targetDetail.open) {
+                faqDetails.forEach(detail => {
+                    if (detail !== targetDetail) {
+                        detail.open = false;
+                    }
+                });
+            }
+        });
+    });
