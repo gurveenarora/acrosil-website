@@ -2683,3 +2683,15 @@ footer.footer, .footer {
 .developer-credit {
     color: #94A3B8 !important;
 }
+
+/* Material Compliance 4-in-a-row Single Line Grid */
+@media (max-width: 992px) {
+    .compliance-cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+    .compliance-cards-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
