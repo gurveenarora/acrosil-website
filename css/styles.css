@@ -1580,3 +1580,156 @@ img {
     border-radius: 8px !important;
     object-fit: contain !important;
 }
+
+
+/* ==========================================================================
+   UI ENHANCEMENTS FOR NEW HOMEPAGE SECTIONS & COLOR SCHEMES
+   ========================================================================== */
+
+/* Modern Feature Cards (Why Acrosil, Product Families, Export, Quality) */
+.feature-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.feature-card-modern {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 26px 28px;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-top: 3px solid transparent;
+}
+
+.feature-card-modern:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--primary-maroon);
+    border-color: rgba(158, 27, 50, 0.22);
+    box-shadow: 0 14px 35px rgba(158, 27, 50, 0.1);
+}
+
+.feature-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(158, 27, 50, 0.08);
+    color: var(--primary-maroon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
+}
+
+.feature-card-modern:hover .feature-icon-box {
+    background: var(--primary-maroon);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.feature-card-modern h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.feature-card-modern p {
+    font-size: 0.94rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Export Capability Banner */
+.export-banner-card {
+    background: linear-gradient(135deg, #1E2229 0%, #733236 55%, #9E1B32 100%);
+    border-radius: 16px;
+    padding: 32px 40px;
+    color: #ffffff;
+    box-shadow: 0 16px 40px rgba(158, 27, 50, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.export-banner-text {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
+    max-width: 680px;
+}
+
+.export-banner-text strong {
+    color: var(--accent-yellow);
+}
+
+.btn-export-quote {
+    background: var(--accent-yellow);
+    color: #1E2229;
+    padding: 13px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.35);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-export-quote:hover {
+    background: #ffffff;
+    color: var(--primary-maroon);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Form Action Buttons Styling */
+.btn-submit-inquiry {
+    background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-dark) 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    padding: 13px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 20px rgba(158, 27, 50, 0.28) !important;
+    transition: var(--transition) !important;
+}
+
+.btn-submit-inquiry:hover {
+    background: linear-gradient(135deg, #b8223d 0%, #8c2035 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(158, 27, 50, 0.38) !important;
+}
+
+.btn-send-drawing {
+    background: rgba(158, 27, 50, 0.04) !important;
+    color: var(--primary-maroon) !important;
+    border: 2px solid var(--primary-maroon) !important;
+    font-weight: 700 !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    transition: var(--transition) !important;
+}
+
+.btn-send-drawing:hover {
+    background: var(--primary-maroon) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(158, 27, 50, 0.22) !important;
+}
