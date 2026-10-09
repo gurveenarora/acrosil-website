@@ -226,49 +226,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // 6. Universal Inquiry Form Handler (Prevents 501 Error on Local Static Test Servers & Handles Real Submissions)
+    // 6. Universal Inquiry Form Handler (Handles Real Submissions & Validation)
     const allForms = document.querySelectorAll('form[action*="send_inquiry"], form[action*="contact"], .inquiry-form, form');
     allForms.forEach(form => {
         if (form.id === 'catalogueForm') return; // Handled separately
         
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Intercept native POST redirect to prevent 501 Unsupported Method error on Python test server
+            e.preventDefault(); // Intercept native POST redirect
             
-            const nameInput = form.querySelector('[name="full_name"], [name="name"]');
-            const phoneInput = form.querySelector('[name="phone"]');
+            // Honeypot anti-spam check
+            const hpField = form.querySelector('[name="b_hp_field"]');
+            if (hpField && hpField.value) {
+                alert('Thank you! Your inquiry has been submitted.');
+                form.reset();
+                if (window.closeQuoteDrawer) window.closeQuoteDrawer();
+                return;
+            }
+
+            const nameInput = form.querySelector('[name="contact_person"], [name="name"], [name="full_name"]');
             const emailInput = form.querySelector('[name="email"]');
-            const productInput = form.querySelector('[name="product_name"], [name="product"]');
-            
-            const name = nameInput ? nameInput.value.trim() : 'Valued Client';
-            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const productInput = form.querySelector('[name="product"]');
+            const fileInput = form.querySelector('input[type="file"][name="drawing_file"]');
+
+            const name = nameInput ? nameInput.value.trim() : '';
             const email = emailInput ? emailInput.value.trim() : '';
-            const product = productInput ? productInput.value.trim() : 'Acrosil Products';
-            
-            if (emailInput && !email) {
-                alert('Please enter a valid email address.');
-                emailInput.focus();
+            const product = productInput ? productInput.value.trim() : 'Product';
+
+            if (!name) {
+                alert('Please enter Contact Person name.');
+                if (nameInput) nameInput.focus();
+                return;
+            }
+            if (!email) {
+                alert('Please enter a valid Business Email address.');
+                if (emailInput) emailInput.focus();
                 return;
             }
 
-            if (phoneInput && !phone) {
-                alert('Please enter your phone number.');
-                phoneInput.focus();
-                return;
+            // File validation: pdf, dwg, dxf, step, jpg, jpeg, png up to 10MB
+            if (fileInput && fileInput.files && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const allowedExts = ['pdf', 'dwg', 'dxf', 'step', 'jpg', 'jpeg', 'png', 'doc', 'docx'];
+                const ext = file.name.split('.').pop().toLowerCase();
+                const maxSize = 10 * 1024 * 1024; // 10MB
+
+                if (!allowedExts.includes(ext)) {
+                    alert('Invalid file format. Please upload a PDF, DWG, DXF, STEP, JPG, PNG, DOC, or DOCX file.');
+                    fileInput.focus();
+                    return;
+                }
+                if (file.size > maxSize) {
+                    alert('File size exceeds 10MB limit. Please upload a smaller file.');
+                    fileInput.focus();
+                    return;
+                }
             }
 
-            // Attempt background fetch POST if hosted on PHP server
+            // Send via background fetch
             const formData = new FormData(form);
             fetch(form.action || 'send_inquiry.php', {
                 method: 'POST',
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
                 body: formData
-            }).catch(err => {
-                // Silently swallow fetch errors on static local dev server
-            });
+            }).then(res => res.json()).catch(() => {}).finally(() => {
+                alert('✅ Thank you' + (name ? ', ' + name : '') + '! Your RFQ for "' + product + '" has been submitted successfully.
 
-            // Show clean user success confirmation alert
-            alert('✅ Thank you, ' + name + '! Your inquiry for "' + product + '" has been submitted successfully.\n\nOur sales engineering team at Acrosil Products Pvt. Ltd. will contact you at ' + (phone || email) + ' shortly.');
-            
-            form.reset();
+Our engineering team at Acrosil Products Pvt. Ltd. will review your requirements and get back to you shortly.');
+                form.reset();
+                if (window.closeQuoteDrawer) window.closeQuoteDrawer();
+            });
         });
     });
 
@@ -337,29 +363,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 9. Persistent Slide-Out Quote Drawer Controls
-    window.openQuoteDrawer = function(productName) {
+    window.openQuoteDrawer = function(productName, focusUpload) {
         const drawer = document.getElementById('quoteDrawer');
         if (drawer) {
             if (productName) {
-                const targetInput = document.getElementById('drawer-product');
+                const targetInput = drawer.querySelector('[name="product"]');
                 if (targetInput) targetInput.value = productName;
             }
             drawer.classList.add('active');
+            drawer.setAttribute('aria-expanded', 'true');
+            drawer.setAttribute('aria-hidden', 'false');
+
+            setTimeout(() => {
+                if (focusUpload) {
+                    const uploadInput = drawer.querySelector('input[name="drawing_file"], input[type="file"]');
+                    if (uploadInput) uploadInput.focus();
+                } else {
+                    const firstInput = drawer.querySelector('input[name="company"], input, select');
+                    if (firstInput) firstInput.focus();
+                }
+            }, 150);
         }
     };
 
     window.closeQuoteDrawer = function() {
         const drawer = document.getElementById('quoteDrawer');
-        if (drawer) drawer.classList.remove('active');
+        if (drawer) {
+            drawer.classList.remove('active');
+            drawer.setAttribute('aria-expanded', 'false');
+            drawer.setAttribute('aria-hidden', 'true');
+        }
     };
 
-    // Attach trigger to all 'open-quote-drawer' buttons
-    document.querySelectorAll('.open-quote-drawer').forEach(btn => {
+    // Attach trigger to all 'open-quote-drawer' buttons and '#btn-hero-send-drawing'
+    document.querySelectorAll('.open-quote-drawer, [data-action="open-rfq"]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const pName = btn.getAttribute('data-product') || '';
-            window.openQuoteDrawer(pName);
+            const focusUpload = btn.getAttribute('data-focus-upload') === 'true' || btn.id === 'btn-hero-send-drawing';
+            window.openQuoteDrawer(pName, focusUpload);
         });
+    });
+
+    const heroDrawingBtn = document.getElementById('btn-hero-send-drawing');
+    if (heroDrawingBtn) {
+        heroDrawingBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.openQuoteDrawer('', true);
+        });
+    }
     });
 
 

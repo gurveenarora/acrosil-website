@@ -1,10 +1,22 @@
 <?php
 /* 
    Acrosil Products Pvt. Ltd. - Inquiry & RFQ Form Handler PHP Script
-   Supports File Uploads (.png, .jpg, .jpeg, .doc, .docx, .pdf)
+   Supports File Uploads (.pdf, .dwg, .dxf, .step, .jpg, .jpeg, .png, .doc, .docx up to 10MB)
 */
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Honeypot anti-spam check
+    if (!empty($_POST['b_hp_field'])) {
+        // Silent drop for spam bot submissions
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            header('Content-Type: application/json');
+            echo json_encode(["status" => "success", "message" => "RFQ submitted successfully"]);
+            exit;
+        }
+        header("Location: index.html?status=success");
+        exit;
+    }
+
     // Collect and sanitize form inputs
     $name = isset($_POST['name']) ? filter_var(trim($_POST['name']), FILTER_SANITIZE_FULL_SPECIAL_CHARS) : (isset($_POST['contact_person']) ? filter_var(trim($_POST['contact_person']), FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '');
     $company = isset($_POST['company']) ? filter_var(trim($_POST['company']), FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
@@ -18,14 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $delivery_date = isset($_POST['delivery_date']) ? filter_var(trim($_POST['delivery_date']), FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
     $message = isset($_POST['message']) ? filter_var(trim($_POST['message']), FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
 
-    // File upload handling for PNG, JPG, JPEG, DOC, DOCX, PDF
+    // File upload handling for PDF, DWG, DXF, STEP, JPG, JPEG, PNG, DOC, DOCX up to 10MB
     $uploaded_file_info = "";
     if (isset($_FILES['drawing_file']) && $_FILES['drawing_file']['error'] == UPLOAD_ERR_OK) {
         $file_name = basename($_FILES['drawing_file']['name']);
+        $file_size = $_FILES['drawing_file']['size'];
         $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        $allowed_exts = array('png', 'jpg', 'jpeg', 'doc', 'docx', 'pdf');
+        $allowed_exts = array('pdf', 'dwg', 'dxf', 'step', 'jpg', 'jpeg', 'png', 'doc', 'docx');
         
-        if (in_array($file_ext, $allowed_exts)) {
+        // 10 MB limit
+        if ($file_size <= 10 * 1024 * 1024 && in_array($file_ext, $allowed_exts)) {
             $upload_dir = __DIR__ . '/uploads/';
             if (!file_exists($upload_dir)) {
                 mkdir($upload_dir, 0755, true);
@@ -39,33 +53,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Target recipient email (official client email)
     $to = "acrosil@rediffmail.com";
-    $subject = "New Product Inquiry / Drawing from: " . $name . ($company ? " ($company)" : "") . " - Acrosil Website";
+    $subject = "New Product Inquiry / Drawing RFQ: " . ($product ? $product : "General") . " - " . ($company ? $company : $name);
 
     // Build email body
-    $email_content = "Name: $name\n";
-    if ($company) $email_content .= "Company: $company\n";
+    $email_content = "Name / Contact: $name\n";
+    if ($company) $email_content .= "Company Name: $company\n";
     if ($country) $email_content .= "Country: $country\n";
-    $email_content .= "Phone: $phone\n";
-    $email_content .= "Email: $email\n";
-    $email_content .= "Product Interest: $product\n";
+    $email_content .= "Phone / WhatsApp: $phone\n";
+    $email_content .= "Business Email: $email\n";
+    $email_content .= "Product Required: $product\n";
     if ($material) $email_content .= "Material: $material\n";
     if ($quantity) $email_content .= "Quantity: $quantity\n";
     if ($application) $email_content .= "Application: $application\n";
-    if ($delivery_date) $email_content .= "Delivery Date: $delivery_date\n";
+    if ($delivery_date) $email_content .= "Required Delivery Date: $delivery_date\n";
     if ($uploaded_file_info) $email_content .= "$uploaded_file_info\n";
-    $email_content .= "\nMessage / Specification Details:\n$message\n";
+    if ($message) $email_content .= "\nAdditional Requirement:\n$message\n";
 
     // Email headers
-    $headers = "From: website@acrosil.com\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $headers = "From: website@acrosilproducts.com\r\n";
+    if ($email) {
+        $headers .= "Reply-To: $email\r\n";
+    }
     $headers .= "X-Mailer: PHP/" . phpversion();
 
-    // Send email
-    if (@mail($to, $subject, $email_content, $headers)) {
-        header("Location: index.html?status=success#contact");
-    } else {
-        header("Location: index.html?status=success#contact");
+    @mail($to, $subject, $email_content, $headers);
+
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        header('Content-Type: application/json');
+        echo json_encode(["status" => "success", "message" => "Thank you! Your RFQ has been submitted successfully."]);
+        exit;
     }
+
+    header("Location: index.html?status=success#contact");
+    exit;
 } else {
     header("Location: index.html");
     exit;
