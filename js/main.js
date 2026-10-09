@@ -298,40 +298,78 @@ Our engineering team at Acrosil Products Pvt. Ltd. will review your requirements
         });
     });
 
-    // 7. Stat Counter Animation
+        // 7. Robust IntersectionObserver Stat Counter & Scroll Animations
     const statNumbers = document.querySelectorAll('.stat-number');
-    let animated = false;
-
-    const animateCounters = () => {
+    
+    const animateStatCounters = () => {
         statNumbers.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target') || '0', 10);
-            let count = 0;
-            const speed = target / 50;
+            if (counter.classList.contains('animated')) return;
+            counter.classList.add('animated');
 
-            const updateCount = () => {
-                count += speed;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count) + '+';
-                    setTimeout(updateCount, 30);
+            const target = parseInt(counter.getAttribute('data-target') || counter.innerText || '0', 10);
+            const isPercent = counter.getAttribute('data-target') === '100' || counter.innerText.includes('%') || counter.nextElementSibling?.innerText.includes('Quality');
+            const suffix = isPercent ? '%' : '+';
+            
+            let count = 0;
+            const duration = 1500; // 1.5s animation duration
+            const startTime = performance.now();
+
+            const updateCounter = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                // Ease-out quad formula for smooth decelerating count
+                const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+                count = Math.floor(easeOutQuad * target);
+                
+                counter.innerText = count + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
                 } else {
-                    counter.innerText = target + '+';
+                    counter.innerText = target + suffix;
+                    counter.classList.add('counter-pop');
                 }
             };
-            updateCount();
+
+            requestAnimationFrame(updateCounter);
         });
     };
 
-    window.addEventListener('scroll', () => {
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar && !animated) {
-            const pos = statsBar.getBoundingClientRect();
-            if (pos.top < window.innerHeight && pos.bottom >= 0) {
-                animated = true;
-                animateCounters();
-            }
-        }
+    const statsBar = document.querySelector('.stats-bar');
+    if (statsBar) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStatCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        statsObserver.observe(statsBar);
+    } else {
+        // Fallback execution if statsBar directly visible
+        animateStatCounters();
+    }
+
+    // 8. Universal Scroll Reveal Animation Observer
+    const scrollElements = document.querySelectorAll('.feature-card-modern, .product-card, .stat-card, .contact-info-card, .export-banner-card, .section-title');
+    scrollElements.forEach((el, idx) => {
+        el.classList.add('animate-on-scroll');
+        const delayClass = 'animate-delay-' + ((idx % 4) + 1);
+        el.classList.add(delayClass);
     });
-});
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollElements.forEach(el => scrollObserver.observe(el));
 
 
     // 8. Live Header Product Search Bar
