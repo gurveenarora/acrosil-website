@@ -585,3 +585,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Send Your Drawing Button Click Handler (Scrolls and focuses file upload)
+    const btnSendDrawing = document.getElementById('btnSendDrawing');
+    if (btnSendDrawing) {
+        btnSendDrawing.addEventListener('click', (e) => {
+            const contactSec = document.getElementById('contact');
+            if (contactSec) {
+                contactSec.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const fileInputLabel = document.querySelector('label[for="contactRfqForm_drawing_file"]');
+                    if (fileInputLabel) {
+                        fileInputLabel.focus();
+                        fileInputLabel.style.outline = '3px solid #F59E0B';
+                        setTimeout(() => { fileInputLabel.style.outline = ''; }, 3000);
+                    }
+                }, 800);
+            }
+        });
+    }
