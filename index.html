@@ -147,7 +147,7 @@
             <!-- Quick Inquiry Hero Form Card -->
             <div class="hero-card">
                 <h3>Request Instant Price Quote</h3>
-                <form class="inquiry-form" action="send_inquiry.php" method="POST">
+                <form class="inquiry-form" action="send_inquiry.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="hero-name">Full Name *</label>
                         <input type="text" id="hero-name" name="name" class="form-control" placeholder="John Doe" required>
@@ -183,8 +183,10 @@
                             <option value="Custom Solutions">Custom Molded Component / Tooling</option>
                         </select>
                     </div>
+                    <input type="file" id="hero-drawing-file" name="drawing_file" accept=".png,.jpg,.jpeg,.doc,.docx,.pdf" style="display:none;">
                     <button type="submit" class="btn btn-submit-inquiry w-100" style="width:100%; margin-top: 12px;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
-                    <button type="button" class="btn btn-send-drawing w-100 open-quote-drawer" style="width:100%; margin-top: 10px;">Send Your Drawing <i class="fa-solid fa-cloud-arrow-up"></i></button>
+                    <button type="button" class="btn btn-send-drawing w-100" id="btn-trigger-upload" style="width:100%; margin-top: 10px;">Send Your Drawing <i class="fa-solid fa-cloud-arrow-up"></i></button>
+                    <div id="hero-file-status" style="font-size: 0.8rem; color: #10B981; font-weight: 600; margin-top: 8px; display: none; text-align: center;"></div>
                 </form>
             </div>
         </div>

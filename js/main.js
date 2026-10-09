@@ -401,3 +401,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+
+    // 11. Send Your Drawing Upload Handler (.png, .jpg, .jpeg, .doc, .docx, .pdf)
+    const btnTriggerUpload = document.getElementById('btn-trigger-upload');
+    const heroFileInput = document.getElementById('hero-drawing-file');
+    const heroFileStatus = document.getElementById('hero-file-status');
+
+    if (btnTriggerUpload && heroFileInput) {
+        btnTriggerUpload.addEventListener('click', (e) => {
+            e.preventDefault();
+            heroFileInput.click();
+        });
+
+        heroFileInput.addEventListener('change', (e) => {
+            if (heroFileInput.files && heroFileInput.files.length > 0) {
+                const file = heroFileInput.files[0];
+                const allowedExts = ['png', 'jpg', 'jpeg', 'doc', 'docx', 'pdf'];
+                const ext = file.name.split('.').pop().toLowerCase();
+
+                if (!allowedExts.includes(ext)) {
+                    alert('Invalid file format. Please select a PNG, JPG, JPEG, DOC, DOCX, or PDF file.');
+                    heroFileInput.value = '';
+                    if (heroFileStatus) heroFileStatus.style.display = 'none';
+                    return;
+                }
+
+                if (heroFileStatus) {
+                    heroFileStatus.innerHTML = '<i class="fa-solid fa-paperclip"></i> Attached: <strong>' + file.name + '</strong> (' + (file.size / 1024).toFixed(1) + ' KB)';
+                    heroFileStatus.style.display = 'block';
+                }
+                btnTriggerUpload.innerHTML = 'Drawing Attached <i class="fa-solid fa-circle-check"></i>';
+                btnTriggerUpload.style.borderColor = '#10B981';
+                btnTriggerUpload.style.color = '#10B981';
+            }
+        });
+    }
