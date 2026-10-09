@@ -282,6 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Set Loading State on Button
+            const submitBtn = form.querySelector('button[type="submit"], .btn-submit-inquiry');
+            const statusMsg = form.querySelector('.form-status-msg');
+            let origBtnHtml = '';
+            if (submitBtn) {
+                origBtnHtml = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting Request...';
+            }
+
             // Send via background fetch
             const formData = new FormData(form);
             fetch(form.action || 'send_inquiry.php', {
@@ -289,11 +299,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'X-Requested-With': 'XMLHttpRequest' },
                 body: formData
             }).then(res => res.json()).catch(() => {}).finally(() => {
-                alert('✅ Thank you' + (name ? ', ' + name : '') + '! Your RFQ for "' + product + '" has been submitted successfully.
-
-Our engineering team at Acrosil Products Pvt. Ltd. will review your requirements and get back to you shortly.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = origBtnHtml;
+                }
+                if (statusMsg) {
+                    statusMsg.style.display = 'block';
+                    statusMsg.style.color = '#10B981';
+                    statusMsg.style.background = 'rgba(16, 185, 129, 0.1)';
+                    statusMsg.style.padding = '10px 14px';
+                    statusMsg.style.borderRadius = '6px';
+                    statusMsg.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+                    statusMsg.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Thank you' + (name ? ', ' + name : '') + '!</strong> Your RFQ for "' + product + '" has been received. Our engineering team will contact you shortly.';
+                } else {
+                    alert('✅ Thank you' + (name ? ', ' + name : '') + '! Your RFQ for "' + product + '" has been submitted successfully.');
+                }
                 form.reset();
-                if (window.closeQuoteDrawer) window.closeQuoteDrawer();
+                setTimeout(() => {
+                    if (window.closeQuoteDrawer) window.closeQuoteDrawer();
+                }, 2500);
             });
         });
     });
@@ -546,4 +570,18 @@ Our engineering team at Acrosil Products Pvt. Ltd. will review your requirements
                 label.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>';
             }
         }
+    });
+
+    // Make entire Product Card & Feature Card Clickable
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a, button, input, select, textarea')) return;
+            const detailsLink = card.querySelector('.product-footer a, h3 a');
+            if (detailsLink && detailsLink.getAttribute('href') && detailsLink.getAttribute('href') !== '#') {
+                window.location.href = detailsLink.getAttribute('href');
+            } else {
+                const modalBtn = card.querySelector('.product-link, .open-quote-drawer');
+                if (modalBtn) modalBtn.click();
+            }
+        });
     });

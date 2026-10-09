@@ -87,132 +87,54 @@
 
     <!-- 3. Hero Section -->
     <section id="home" class="hero">
-        <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+        <div class="container hero-grid">
             <!-- Left Half: Headline & Information Content -->
-            <div class="hero-content" style="padding-top: 10px;">
+            <div class="hero-content">
                 <div class="hero-tag">
-                    <i class="fa-solid fa-award"></i> Industrial Polymer Engineering Since 1992
+                    <i class="fa-solid fa-award" style="color: #F59E0B;"></i> Industrial Polymer Engineering Since 1992
                 </div>
-                <h1 style="font-size: 2.3rem; line-height: 1.2; margin: 12px 0 18px; font-weight: 800; color: #ffffff;">
+                <h1 style="font-size: 2.5rem; line-height: 1.2; margin: 14px 0 18px; font-weight: 800; color: #ffffff;">
                     Engineered Rubber & Silicone Components for Industrial Applications
                 </h1>
-                <p style="font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 16px; font-weight: 600;">
+                <p style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.92); margin-bottom: 16px; font-weight: 600;">
                     Custom Gaskets • Seals • Bellows • Inflatable Seals • Tubes • Profiles • Custom-Moulded Components
                 </p>
-                <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); margin-bottom: 24px;">
+                <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); margin-bottom: 20px;">
                     Manufacturer & Exporter from India | Established 1992
                 </p>
 
-                <div style="background: rgba(255, 255, 255, 0.08); border-left: 4px solid #FFC107; padding: 16px 20px; border-radius: 8px; margin-top: 15px;">
-                    <div style="color: #FFC107; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;">
-                        <i class="fa-solid fa-gears"></i> Custom Manufacturing Capabilities
-                    </div>
-                    <div style="color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.55;">
-                        Custom-moulded, extruded, and hand-crafted rubber & silicone components manufactured according to drawings, samples, or technical requirements.
-                    </div>
+                <!-- Hero Action Buttons: 1 Primary CTA + 1 Secondary Button -->
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-hero-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Request a Quote
+                    </a>
+                    <a href="#contact" class="btn-hero-secondary">
+                        <i class="fa-solid fa-file-arrow-up"></i> Send Your Drawing
+                    </a>
+                </div>
+
+                <div class="hero-contact-strip">
+                    <a href="tel:+919892767126" class="hero-contact-item">
+                        <i class="fa-solid fa-phone" style="color: #F59E0B;"></i> Call +91 9892767126
+                    </a>
+                    <a href="https://wa.me/919892767126?text=Hello%20Acrosil%20Team%2C%20I%20have%20an%20enquiry" target="_blank" rel="noopener" class="hero-contact-item">
+                        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Us
+                    </a>
                 </div>
             </div>
 
-            <!-- Right Half: Compact RFQ Form Card -->
-            <div class="hero-card" style="max-width: 560px; width: 100%; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); border-radius: 16px; padding: 24px 26px;">
-                <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: #ffffff; display: flex; align-items: center; gap: 10px; font-weight: 700;">
-                    <i class="fa-solid fa-paper-plane" style="color: #FFC107;"></i> Request a Quote (RFQ)
-                </h3>
-                <form id="heroRfqForm" action="send_inquiry.php" method="POST" enctype="multipart/form-data" class="rfq-form-component">
-                    <!-- Spam Honeypot -->
-                    <input type="text" name="b_hp_field" style="display:none !important;" tabindex="-1" autocomplete="off">
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Company Name <span style="color: #FFC107;">*</span></label>
-                            <input type="text" name="company" required class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Company Name">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Country <span style="color: #FFC107;">*</span></label>
-                            <input type="text" name="country" required class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Country">
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Contact Person <span style="color: #FFC107;">*</span></label>
-                            <input type="text" name="contact_person" required class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Your Name">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Business Email <span style="color: #FFC107;">*</span></label>
-                            <input type="email" name="email" required class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="name@company.com">
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Phone / WhatsApp</label>
-                            <input type="tel" name="phone" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="+91 9892767126">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Product Required <span style="color: #FFC107;">*</span></label>
-                            <select name="product" required class="form-control rfq-product-select" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
-                                <option value="">Select Product...</option>
-                                <option value="Rubber Bellows">Rubber Bellows</option>
-                                <option value="Rubber Sheets">Rubber & Silicone Sheets</option>
-                                <option value="Flexipipe & Silicone Sleeves">Flexipipe, Silicone Sleeves & Hoses</option>
-                                <option value="PVC Thunder Hose Pipe">PVC Steel Wire Hose Pipe (Thunder Hose)</option>
-                                <option value="PTFE Teflon Products">PTFE Teflon Bushes, Washers & Machined Parts</option>
-                                <option value="Rubber Flange Gaskets">Rubber Flange Gaskets & Washers</option>
-                                <option value="TC Gaskets">TC (Tri-Clamp) Sanitary Gaskets</option>
-                                <option value="Silicone Door Gaskets">Silicone Door & Autoclave Gaskets</option>
-                                <option value="Vibro Sifter Gaskets">Vibro Sifter U-Type Gaskets</option>
-                                <option value="Rubber O-Rings & Oil Seals">Rubber O-Rings & Oil Seals</option>
-                                <option value="Silicone Packing Gaskets">Silicone Packing Gaskets (D, E, L, U & T Types)</option>
-                                <option value="Vibro Sifter Springs">Springs For Vibro Sifter</option>
-                                <option value="Mechanical Sifter Couplings">Mechanical Sifter Rubber Couplings</option>
-                                <option value="Multi Mill Sieves">Multi Mill Sieves & Gaskets</option>
-                                <option value="Silicone & PTFE Balls">Silicone Rubber & PTFE Cleaning Balls</option>
-                                <option value="Sight Glass Assembly">Sight Glass & Gasket Assembly</option>
-                                <option value="Lead Free Sieves">Lead-Free Sifter Sieves & Screen Mesh</option>
-                                <option value="Custom Component">Custom Component / Tooling</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px;">
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Material</label>
-                            <input type="text" name="material" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Silicone">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Quantity</label>
-                            <input type="text" name="quantity" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. 500 pcs">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Delivery Date</label>
-                            <input type="date" name="delivery_date" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;">
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 10px;">
-                        <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Application</label>
-                        <input type="text" name="application" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="e.g. Engineering equipment / Fluid transfer">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 10px;">
-                        <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.85; font-size: 0.78rem;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
-                        <div class="custom-file-wrapper">
-                            <input type="file" name="drawing_file" id="heroRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
-                            <label for="heroRfqForm_drawing_file" class="btn-file-upload">
-                                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <label style="display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; color: #ffffff;">Additional Requirement</label>
-                        <textarea name="message" rows="2" class="form-control" style="font-size: 0.85rem; padding: 8px 10px; background: #ffffff; border: 1px solid #cbd5e1; color: #0f172a; border-radius: 6px;" placeholder="Dimensions, tolerances, or specific requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-submit-inquiry w-100" style="width: 100%; padding: 11px; font-weight: 800; font-size: 0.98rem; border: none; border-radius: 8px; cursor: pointer; background: linear-gradient(135deg, #FFC107 0%, #F5A623 100%); color: #0F172A; box-shadow: 0 4px 18px rgba(255, 193, 7, 0.35);">Submit Request <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i></button>
-                    <div class="form-status-msg" style="font-size: 0.85rem; margin-top: 10px; display: none; text-align: center;"></div>
-                </form>
+            <!-- Right Half: Real Hero Product Showcase Image -->
+            <div class="hero-image-card">
+                <img src="images/showcase/card_bellows.jpg" alt="Acrosil Custom Engineered Rubber and Silicone Components" style="width: 100%; height: 420px; object-fit: cover;">
+                <div class="hero-badge-overlay badge-top-right">
+                    <i class="fa-solid fa-certificate" style="color: #F59E0B;"></i> ISO 9001:2015 Certified
+                </div>
+                <div class="hero-badge-overlay badge-bottom-left">
+                    <i class="fa-solid fa-shield-halved" style="color: #10B981;"></i> 100% Quality Assured
+                </div>
+                <div class="hero-badge-overlay badge-bottom-right">
+                    <i class="fa-solid fa-globe" style="color: #60A5FA;"></i> Exporting Worldwide
+                </div>
             </div>
         </div>
     
@@ -230,23 +152,36 @@
     <div class="container stats-bar">
         <div class="stats-grid">
             <div class="stat-card">
+                <div class="stat-icon-box"><i class="fa-solid fa-award"></i></div>
                 <div class="stat-number" data-target="30">30+</div>
                 <div class="stat-label">Years of Experience</div>
             </div>
             <div class="stat-card">
+                <div class="stat-icon-box"><i class="fa-solid fa-cubes"></i></div>
                 <div class="stat-number" data-target="1000">1000+</div>
-                <div class="stat-label">Industrial Clients</div>
+                <div class="stat-label">Industrial Products</div>
             </div>
             <div class="stat-card">
+                <div class="stat-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
                 <div class="stat-number" data-target="500">500+</div>
-                <div class="stat-label">Custom Molded Components</div>
+                <div class="stat-label">Clients Worldwide</div>
             </div>
             <div class="stat-card">
+                <div class="stat-icon-box"><i class="fa-solid fa-shield-circle-check"></i></div>
                 <div class="stat-number" data-target="100">100%</div>
                 <div class="stat-label">Quality Assured</div>
             </div>
         </div>
-    </div>
+
+        <!-- Trust & Compliance Row -->
+        <div class="trust-row">
+            <div class="trust-item"><i class="fa-solid fa-circle-check"></i> ISO 9001:2015 Certified Facility</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check"></i> US FDA 21 CFR 177.2600 Compliant Silicone</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check"></i> RoHS & REACH Compliant Materials</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check"></i> Certified 100% Lead-Free Sifter Mesh</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check"></i> Global Export Quality Standards</div>
+        </div>
+
 
     <!-- 4. Why Acrosil Section -->
     <section id="about" class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-color);">
@@ -366,7 +301,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: Thickness 1mm to 12mm
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="rubber_sheets.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -392,7 +327,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: ID 2mm up to ID 500mm
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="flexipipe_silicone.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -418,7 +353,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: ID 12mm up to ID 300mm
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="thunder_hose.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -444,7 +379,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: ID 10mm up to ID 500mm
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="ptfe_products.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -522,7 +457,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: Custom Extruded Profiles
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="inflatable_sponge_gaskets.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -548,7 +483,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: 12" up to 72" Deck Rims
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="cord_profiles.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -574,7 +509,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: ID 2mm up to ID 2000mm
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="orings_rubber_rings.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -600,7 +535,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: Custom Extruded Profiles
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="packing_oil_seals.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -626,7 +561,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: Standard Sifter Deck Heights
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="sifter_springs.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -652,7 +587,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: Standard Shaft Bores
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="sifter_couplings.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -678,7 +613,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: 6" up to 16" Screens
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="mill_sleeves.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -730,7 +665,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: 75mm up to 200mm Discs
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="sight_glass.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -756,7 +691,7 @@
                             <i class="fa-solid fa-ruler-combined"></i> Sizes: 12" up to 72" Screen Decks
                         </div>
                         <div class="product-footer">
-                            <a href="#" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="sifter_sieves.html" class="product-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
                             <button type="button" class="btn btn-primary open-quote-drawer" style="padding: 6px 14px; font-size: 0.8rem; open-quote-drawer" data-action="open-rfq" aria-haspopup="dialog" aria-controls="quoteDrawer">Quote</button>
                         </div>
                     </div>
@@ -1198,7 +1133,7 @@
     </footer>
 
     <!-- Floating WhatsApp Quick Inquiry Widget -->
-    <a href="https://wa.me/919892767126?text=Hello%2C%20I%20am%20interested%20in%20Acrosil%20products." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/919892767126?text=Hello%20Acrosil%20Products%2C%20I%20have%20an%20enquiry." class="whatsapp-fab" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
