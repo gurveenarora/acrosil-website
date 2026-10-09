@@ -1997,3 +1997,25 @@ img {
     color: #34D399 !important;
     border: 2px solid #10B981 !important;
 }
+
+/* Form Container Max Width Rules to Prevent Screen Stretching */
+.hero-card {
+    max-width: 580px !important;
+    width: 100% !important;
+}
+
+#contact .rfq-form-component,
+.contact-grid .rfq-form-component {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    .hero-card {
+        max-width: 100% !important;
+    }
+}
