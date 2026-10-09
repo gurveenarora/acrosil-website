@@ -22,7 +22,7 @@
 </head>
 <body>
 
-                        <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
+                                <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
     <header class="header-sticky">
         <!-- 1. Top Bar -->
         <div class="topbar">
@@ -112,7 +112,7 @@
 </head>
 <body>
 
-                        <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
+                                <!-- Sticky Header Wrapper (Topbar + Navbar fixed at top) -->
     <header class="header-sticky">
         <!-- 1. Top Bar -->
         <div class="topbar">
@@ -289,9 +289,14 @@
         <input type="text" name="application" class="form-control" style="font-size: 0.82rem; padding: 8px 10px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-    <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; color: #64748b;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
-        <input type="file" name="drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="form-control rfq-file-input" style="font-size: 0.82rem; padding: 8px 10px;">
+        <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+        <div class="custom-file-wrapper">
+            <input type="file" name="drawing_file" id="heroRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
+            <label for="heroRfqForm_drawing_file" class="btn-file-upload">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>
+            </label>
+        </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 14px;">
@@ -337,7 +342,7 @@
         </div>
     </div>
 
-        <!-- 4. Why Acrosil Section -->
+    <!-- 4. Why Acrosil Section -->
     <section id="about" class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-title text-center">
@@ -381,6 +386,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -853,6 +860,8 @@
 
     
 
+    
+
 
 <!-- 8. Contact Us Section -->
     
@@ -875,6 +884,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -920,6 +931,8 @@
 
     
 
+    
+
         <!-- 7. Quality Section -->
     <section id="quality-intro" class="section-padding" style="background: var(--bg-light); border-bottom: 1px solid var(--border-color);">
         <div class="container">
@@ -949,6 +962,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -1008,6 +1023,8 @@
 
     
 
+    
+
     <!-- 8. Global Reach, Export Markets & FAQ Section -->
         <!-- Frequently Asked Questions Section -->
     <section id="faq" class="section-padding" style="background: #ffffff; border-top: 1px solid var(--border-color);">
@@ -1060,6 +1077,8 @@
             </div>
         </div>
     </section>
+
+    
 
     
 
@@ -1176,9 +1195,14 @@
         <input type="text" name="application" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-    <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; color: #64748b;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
-        <input type="file" name="drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="form-control rfq-file-input" style="font-size: 0.88rem; padding: 10px 14px;">
+        <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+        <div class="custom-file-wrapper">
+            <input type="file" name="drawing_file" id="contactRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
+            <label for="contactRfqForm_drawing_file" class="btn-file-upload">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>
+            </label>
+        </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 14px;">
@@ -1195,7 +1219,9 @@
 
 
 
-                    <!-- 9. Footer -->
+
+
+                        <!-- 9. Footer -->
     <footer class="footer" style="background: #1e293b; color: #ffffff; padding: 50px 0 25px 0;">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -1291,7 +1317,7 @@
     <!-- Main JavaScript -->
     <script src="js/main.js?v=2.1"></script>
 
-                    <!-- Slide-Out Persistent Quote Drawer -->
+                        <!-- Slide-Out Persistent Quote Drawer -->
     <div id="quoteDrawer" class="drawer-overlay" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" onclick="if(event.target === this) closeQuoteDrawer()">
         <div class="slide-drawer">
             <div class="drawer-header">
@@ -1377,9 +1403,14 @@
         <input type="text" name="application" class="form-control" style="font-size: 0.88rem; padding: 10px 14px;" placeholder="e.g. Engineering equipment / Fluid transfer">
     </div>
 
-    <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; color: #64748b;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
-        <input type="file" name="drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="form-control rfq-file-input" style="font-size: 0.88rem; padding: 10px 14px;">
+        <div class="form-group" style="margin-bottom: 12px;">
+        <label style="display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 4px;">Upload Drawing / Photograph <span style="font-weight: normal; opacity: 0.8;">(pdf, dwg, dxf, step, jpg, png; max 10MB)</span></label>
+        <div class="custom-file-wrapper">
+            <input type="file" name="drawing_file" id="drawerRfqForm_drawing_file" accept=".pdf,.dwg,.dxf,.step,.jpg,.jpeg,.png" class="rfq-file-input" style="display: none;">
+            <label for="drawerRfqForm_drawing_file" class="btn-file-upload">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>
+            </label>
+        </div>
     </div>
 
     <div class="form-group" style="margin-bottom: 14px;">

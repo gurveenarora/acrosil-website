@@ -489,3 +489,23 @@ Our engineering team at Acrosil Products Pvt. Ltd. will review your requirements
             }
         });
     }
+
+
+    // 12. Custom File Upload UI Sync
+    document.addEventListener('change', (e) => {
+        if (e.target && e.target.classList.contains('rfq-file-input')) {
+            const input = e.target;
+            const label = input.nextElementSibling || document.querySelector('label[for="' + input.id + '"]');
+            if (!label) return;
+
+            if (input.files && input.files.length > 0) {
+                const file = input.files[0];
+                const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+                label.classList.add('has-file');
+                label.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <span>Attached: <strong>' + file.name + '</strong> (' + sizeMb + ' MB)</span>';
+            } else {
+                label.classList.remove('has-file');
+                label.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> <span>Choose File / Drawing</span>';
+            }
+        }
+    });
