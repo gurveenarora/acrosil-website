@@ -328,24 +328,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateStatCounters = () => {
         statNumbers.forEach(counter => {
             if (counter.classList.contains('animated')) return;
-            counter.classList.add('animated');
+            
+            // Check if element is visible in DOM
+            if (!counter.offsetWidth && !counter.offsetHeight && !counter.getClientRects().length) return;
 
-            const target = parseInt(counter.getAttribute('data-target') || counter.innerText || '0', 10);
-            const isPercent = counter.getAttribute('data-target') === '100' || counter.innerText.includes('%') || counter.nextElementSibling?.innerText.includes('Quality');
+            const rawTarget = counter.getAttribute('data-target');
+            const target = parseInt(rawTarget, 10);
+            
+            if (is(target)) {
+                if (!counter.innerText.trim()) {
+                    counter.style.display = 'none';
+                }
+                return;
+            }
+
+            counter.classList.add('animated');
+            const isPercent = rawTarget === '100' || counter.innerText.includes('%');
             const suffix = isPercent ? '%' : '+';
             
             let count = 0;
-            const duration = 1500; // 1.5s animation duration
+            const duration = 1500;
             const startTime = performance.now();
 
             const updateCounter = (currentTime) => {
                 const elapsedTime = currentTime - startTime;
                 const progress = Math.min(elapsedTime / duration, 1);
-                // Ease-out quad formula for smooth decelerating count
                 const easeOutQuad = 1 - (1 - progress) * (1 - progress);
                 count = Math.floor(easeOutQuad * target);
                 
-                counter.innerText = count + suffix;
+                counter.innerText = (is(count) ? target : count) + suffix;
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
@@ -354,6 +365,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     counter.classList.add('counter-pop');
                 }
             };
+
+            requestAnimationFrame(updateCounter);
+        });
+    };
 
             requestAnimationFrame(updateCounter);
         });
